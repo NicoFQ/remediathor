@@ -1,4 +1,4 @@
-import Copiar from "../components/ficheros/copiar/Copiar"
+import Copiar from "../components/ficheros/copiar/AccionCopiar"
 import tipoAccion from './../constants/acciones'
 import pasoReader from "./pasosReader";
 const pasoProcessor = {

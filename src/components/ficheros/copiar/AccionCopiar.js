@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import tipoAccion from './../../../constants/acciones'
+import tipoAccion from '../../../constants/acciones'
 
-export default function Copiar({ onSavePaso }) {
-  const [setAccion, accion] = useState(tipoAccion.COPIAR.code)  
-  const onSave = () =>{
+export default function AccionCopiar ({ onSavePaso }) {
+  const onSave = () => {
 
     // onSavePaso(`${tipoAccion.FICHEROS.acciones.COPIAR.title}`)
   }
@@ -31,6 +29,5 @@ export default function Copiar({ onSavePaso }) {
       <hr />
       <button type='submit' onClick={onSave}>Guardar</button>
     </div>
-  );
+  )
 }
-    
