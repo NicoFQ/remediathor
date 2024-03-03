@@ -1,23 +1,20 @@
-import { useState } from "react"
-import PasoFichero from "./ficheros/PasoFichero"
-import PasoAJF from "./ajf/PasoAJF"
+import { useState } from 'react'
+import PasoFichero from './ficheros/PasoFichero'
+import PasoAJF from './ajf/PasoAJF'
 
+export default function Left ({ onSavePaso }) {
+  const [pasoFicheros, setPasoFicheros] = useState(true)
+  const [pasoAjf, setPasoAjf] = useState(false)
 
-export default function Left({ onSavePaso }) {
-const [pasoFicheros, setPasoFicheros] = useState(true)
-const [pasoAjf, setPasoAjf] = useState(false)
-  
+  const onAddPasoAjf = () => {
+    setPasoAjf(true)
+    setPasoFicheros(false)
+  }
 
-const onAddPasoAjf = () =>{
-  setPasoAjf(true)
-  setPasoFicheros(false)
-}
-
-const onAddPasoFicheros = () =>{
-  setPasoFicheros(true)
-  setPasoAjf(false)
-}
-
+  const onAddPasoFicheros = () => {
+    setPasoFicheros(true)
+    setPasoAjf(false)
+  }
 
   return (
     <div className="border">
@@ -27,5 +24,5 @@ const onAddPasoFicheros = () =>{
         <br />
 
     </div>
-  );
+  )
 }

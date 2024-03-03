@@ -1,12 +1,10 @@
-import Left from './components/Left'
-import Right from './components/Right'
-import './App.css';
-import Remediathor from './Remediathor';
+import './App.css'
+import Remediathor from './Remediathor'
 
-function App() {
+function App () {
   return (
     <Remediathor/>
-  );
+  )
 }
 
-export default App;
+export default App

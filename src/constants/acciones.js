@@ -4,18 +4,17 @@ const tipoAccion = {
     code: 'COPIAR',
     title: 'Solicitamos copiar los siguientes ficheros:',
     origen: '',
-    destino: '',
+    destino: ''
 
   },
-  RENOMBRAR:{
+  RENOMBRAR: {
     code: 'RENOMBRAR',
     title: 'Solicitamos renombrar los siguientes ficheros:'
   },
-  BORRAR:{
+  BORRAR: {
     code: 'BORRAR',
     title: 'Solicitamos borrar los siguientes ficheros:'
   }
 }
-  
+
 export default tipoAccion
-  

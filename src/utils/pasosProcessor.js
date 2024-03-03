@@ -1,16 +1,15 @@
-import Copiar from "../components/ficheros/copiar/AccionCopiar"
 import tipoAccion from './../constants/acciones'
-import pasoReader from "./pasosReader";
+import pasoReader from './pasosReader'
 const pasoProcessor = {
   process: (paso) => {
     switch (paso.accion) {
       case tipoAccion.COPIAR.code:
-          return pasoReader.copiar(paso)
+        return pasoReader.copiar(paso)
 
       default:
-        break;
+        break
     }
   }
-  }
-  
-  export default pasoProcessor
+}
+
+export default pasoProcessor
