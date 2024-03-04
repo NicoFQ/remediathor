@@ -5,6 +5,7 @@ import pasoProcessor from './utils/pasosProcessor'
 
 export default function Remediathor () {
   const [pasos, setPasos] = useState([])
+
   const onSavePaso = (e) => {
     // Prevent the browser from reloading the page
     e.preventDefault()
@@ -25,8 +26,8 @@ export default function Remediathor () {
   }
 
   return (
-    <form method='post' onSubmit={onSavePaso} className='left-form'>
-      <Left onSavePaso={onSavePaso} />
+    <form method='post' onSubmit={onSavePaso} className='left-form' data-bs-theme="dark">
+      <Left onSavePaso={onSavePaso} pasos={pasos} />
       <Right pasos={pasos}/>
     </form>
   )

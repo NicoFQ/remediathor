@@ -1,15 +1,16 @@
 import tipoAccion from './../constants/acciones'
-
+import maquina from './../constants/maquinas'
+import rutaProcessor from './rutasProcessor'
 const pasoReader = {
-  copiar: ({ pais, motor, origen, rutaOrigen, ficherosOrigen, destino, rutaDestino, ficherosDestino }) => {
+  copiar: ({ pais, motorOrigen, maquinaOrigen, carpetaOrigen, ficherosOrigen, motorDestino, maquinaDestino, carpetaDestino, ficherosDestino }) => {
     return (
 `${tipoAccion.COPIAR.title}
-ORIGEN: ${origen}
-${rutaOrigen}
+ORIGEN: ${maquina[maquinaOrigen].name}
+${rutaProcessor.process(maquinaOrigen, motorOrigen, pais, carpetaOrigen)}
 ${ficherosOrigen}
 
-DESTINO: ${destino}
-${rutaDestino}
+DESTINO: ${maquina[maquinaDestino].name}
+${rutaProcessor.process(maquinaDestino, motorDestino, pais, carpetaDestino)}
 ${ficherosDestino}
 `
     )

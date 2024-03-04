@@ -1,20 +1,20 @@
 // Objetivo: Definir las maquinas
 const maquina = {
   APX: {
-    name: 'APX',
-    code: 'APX PROD'
+    code: 'APX',
+    name: 'APX PROD'
   },
   PASARELA: {
-    name: 'PASARELA',
-    code: 'LPFTP005'
+    code: 'PASARELA',
+    name: 'LPFTP005'
   },
   SAS: {
-    name: 'SAS',
-    code: 'APSAS101'
+    code: 'SAS',
+    name: 'APSAS101'
   },
   TRANSMI: {
-    name: 'TRANSMI',
-    code: 'TRANSMI'
+    code: 'TRANSMI',
+    name: 'TRANSMI'
   }
 
 }
