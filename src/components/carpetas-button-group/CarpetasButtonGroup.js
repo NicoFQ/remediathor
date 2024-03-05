@@ -1,8 +1,6 @@
-import { useState } from 'react'
 import { Button, ButtonGroup } from 'reactstrap'
 
-export default function CarpetasButtonGroup ({ origenDestino, carpetas }) {
-  const [carpeta, setCarpeta] = useState('datent')
+export default function CarpetasButtonGroup ({ origenDestino, carpetas, carpeta, setCarpeta }) {
   return (
     <>
         <ButtonGroup>
@@ -20,7 +18,7 @@ export default function CarpetasButtonGroup ({ origenDestino, carpetas }) {
 
             )
           }
-          <input type="hidden" name={origenDestino === 'O' ? 'carpetaOrigen' : 'carpetaDestino'} value={carpeta} />
+          <input type="hidden" name={'carpeta' + origenDestino } value={carpeta} />
         </ButtonGroup>
     </>
   )

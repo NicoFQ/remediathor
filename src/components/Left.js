@@ -7,7 +7,7 @@ import {
   AccordionHeader,
   AccordionItem
 } from 'reactstrap'
-export default function Left ({ onSavePaso, pasos }) {
+export default function Left ({ onSavePaso, pasos, listDatsalDatent }) {
   const [pasoFicheros, setPasoFicheros] = useState(true)
   const [pasoAjf, setPasoAjf] = useState(false)
   const [open, setOpen] = useState('')
@@ -39,7 +39,7 @@ export default function Left ({ onSavePaso, pasos }) {
           </AccordionBody>
         </AccordionItem>
       </Accordion>
-        { pasoFicheros && <PasoFichero onSavePaso={onSavePaso} /> }
+        { pasoFicheros && <PasoFichero onSavePaso={onSavePaso} listDatsalDatent={listDatsalDatent}/> }
         { pasoAjf && <PasoAJF onSavePaso={onSavePaso} /> }
         <p><button onClick={onAddPasoAjf}>+ Add paso AJF</button> <button onClick={onAddPasoFicheros}>+Add paso Ficheros</button></p>
         <br />

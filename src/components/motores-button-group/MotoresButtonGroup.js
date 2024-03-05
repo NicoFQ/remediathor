@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import { Button, ButtonGroup } from 'reactstrap'
 import motores from './../../constants/motores'
 
-export default function MotoresButtonGroup ({ origenDestino }) {
-  const [motor, setMotor] = useState('CECO')
+export default function MotoresButtonGroup ({ origenDestino, motor, setMotor }) {
   const arrayMotores = Object.keys(motores)
   return (
     <>
@@ -23,7 +21,7 @@ export default function MotoresButtonGroup ({ origenDestino }) {
           ))
         }
       </ButtonGroup>
-      <input type="hidden" name={origenDestino === 'O' ? 'motorOrigen' : 'motorDestino'} value={motor} />
+      <input type="hidden" name={'motor' + origenDestino} value={motor} />
     </>
   )
 }

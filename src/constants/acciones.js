@@ -3,7 +3,7 @@ const tipoAccion = {
   COPIAR: {
     code: 'COPIAR',
     name: 'Copiar',
-    title: 'Solicitamos copiar los siguientes ficheros:',
+    title: 'Solicitamos copiar los siguientes ficheros',
     origen: '',
     destino: ''
 

@@ -4,8 +4,9 @@ import AccionCopiar from './copiar/AccionCopiar'
 import { Button, ButtonGroup } from 'reactstrap'
 import PaisesButtonGroup from '../paisesButtonGroup/PaisesButtonGroup'
 
-export default function PasoFichero ({ onSavePaso }) {
+export default function PasoFichero ({ onSavePaso, listDatsalDatent }) {
   const [accion, setAccion] = useState(tipoAccion.COPIAR.code)
+  const [pais, setPais] = useState('AR')
 
   return (
     <div>
@@ -40,11 +41,11 @@ export default function PasoFichero ({ onSavePaso }) {
             {tipoAccion.BORRAR.name}
           </Button>
         </ButtonGroup>
-        <PaisesButtonGroup />
+        <PaisesButtonGroup pais={pais} setPais={setPais} />
       </div>
       <hr />
       {
-      (accion === tipoAccion.COPIAR.code) ? <AccionCopiar onSavePaso={onSavePaso} /> : ''
+      (accion === tipoAccion.COPIAR.code) ? <AccionCopiar onSavePaso={onSavePaso} pais={pais} listDatsalDatent={listDatsalDatent} /> : ''
       }
     </div>
   )

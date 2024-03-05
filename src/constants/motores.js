@@ -40,10 +40,6 @@ const motor = {
       datsal: '/SIMU/capreg_datsal',
       histo: '/SIMU/capreg_histo'
     }
-  },
-  FLCREG: {
-    name: 'Simulador de inputs',
-    code: 'FLCREG'
   }
 
 }

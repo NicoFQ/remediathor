@@ -24,10 +24,10 @@ const ruta = {
     }
   },
   SAS: {
-    base: '/fichtemcomp/pr/SAS'
+    base: '/SASDATOS/EXPLORAR/MODIRB/'
   },
   TRANSMI: {
-    base: '/fichtemcomp/pr/TRANSMI'
+    base: '\\\\Datdpto1\\datos_datdpto1\\TRANSMI\\SC004150\\_enviar\\datsal\\pd\\'
   }
 
 }

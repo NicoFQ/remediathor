@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import { Button, ButtonGroup } from 'reactstrap'
 import paises from './../../constants/paises'
 
-export default function PaisesButtonGroup () {
-  const [pais, setPais] = useState('AR')
+export default function PaisesButtonGroup ({ pais, setPais }) {
   const arrayPaises = Object.keys(paises)
   return (
     <>

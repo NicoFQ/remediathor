@@ -4,9 +4,7 @@ import maquinas from './../../constants/maquinas'
 import MotoresButtonGroup from '../motores-button-group/MotoresButtonGroup'
 import CarpetasButtonGroup from '../carpetas-button-group/CarpetasButtonGroup'
 
-export default function MaquinasButtonGroup ({ origenDestino, maquinaDefecto }) {
-  const [maquina, setMaquina] = useState(maquinaDefecto)
-
+export default function MaquinasButtonGroup ({ origenDestino, maquina, setMaquina, motor, setMotor, carpeta, setCarpeta }) {
   const getCarpetas = (maquina) => {
     if (maquina === maquinas.APX.code) {
       return ['datent', 'datsal']
@@ -43,17 +41,17 @@ export default function MaquinasButtonGroup ({ origenDestino, maquinaDefecto }) 
           </Button>
           ))
         }
-      <input type="hidden" name={origenDestino === 'O' ? 'maquinaOrigen' : 'maquinaDestino'} value={maquina} />
+      <input type="hidden" name={'maquina' + origenDestino} value={maquina} />
       </ButtonGroup>
       {
         maquina === maquinas.PASARELA.code
-          ? <MotoresButtonGroup origenDestino={origenDestino} />
+          ? <MotoresButtonGroup origenDestino={origenDestino} motor={motor} setMotor={setMotor}/>
           : ''
       }
       {
       maquina === maquinas.PASARELA.code || maquina === maquinas.APX.code
         ? <>
-          <CarpetasButtonGroup origenDestino={origenDestino} carpetas={carpetas} />
+          <CarpetasButtonGroup origenDestino={origenDestino} carpetas={carpetas} carpeta={carpeta} setCarpeta={setCarpeta}/>
         </>
         : ''
       }
