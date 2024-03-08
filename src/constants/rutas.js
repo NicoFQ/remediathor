@@ -21,6 +21,11 @@ const ruta = {
       datent: '/SIMU/capreg_datent',
       datsal: '/SIMU/capreg_datsal',
       histo: '/SIMU/capreg_histo'
+    },
+    IFRS9: {
+      datent: '/datent',
+      datsal: '/datsal',
+      histo: '/histo'
     }
   },
   SAS: {

@@ -20,15 +20,15 @@ export default function Remediathor () {
     const pasoNuevo = pasoProcessor.process(formJson)
     setPasos([pasoNuevo])
     // setFiles((prevFiles) => [...prevFiles, ...newFiles]);
-
-    console.log(listDatsalDatent)
   }
 
   return (
     <div>
       <div className='d-flex flex-row justify-content-around'>
         <h1>{'{R}'}</h1>
-        <ListadoLoader name={'D-SalEnt'} setListado={setListDatsalDatent}/>
+        <ListadoLoader id='DATENT_DATSAL' name={'Daent/Datsal'} setListado={setListDatsalDatent} listados={listDatsalDatent} />
+        <ListadoLoader id='HISTO' name={'Histo'} setListado={setListDatsalDatent} listados={listDatsalDatent} />
+        <ListadoLoader id='HISTO_IFRS9' name={'Histo IFRS9'} setListado={setListDatsalDatent} listados={listDatsalDatent} />
       </div>
       <hr />
       <form method='post' onSubmit={onSavePaso} className='left-form' data-bs-theme="dark">

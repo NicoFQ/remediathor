@@ -1,13 +1,24 @@
+@font-face {
+  font-family: 'JetBrainsMono';
+  /* src: url('./font/JetBrainsMono-Light.ttf') format('truetype'); */
+  src: local('JetBrainsMono'), url(./font/JetBrainsMono-SemiBold.ttf) format('ttf');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'JetBrainsMono', monospace;
+  /* font-weight: 600; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #0a0c10 !important;
   color: white !important;
 }
+
+#root{
+  font-family: 'JetBrainsMono', monospace;
+  font-weight: bold;
+}
+
 
 a{
   color: #61dafb;

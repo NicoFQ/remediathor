@@ -4,7 +4,7 @@ import maquinas from './../../constants/maquinas'
 import MotoresButtonGroup from '../motores-button-group/MotoresButtonGroup'
 import CarpetasButtonGroup from '../carpetas-button-group/CarpetasButtonGroup'
 
-export default function MaquinasButtonGroup ({ origenDestino, maquina, setMaquina, motor, setMotor, carpeta, setCarpeta }) {
+export default function MaquinasButtonGroup ({ origenDestino, maquina, setMaquina, motor, setMotor, carpeta, setCarpeta, setCierreHisto }) {
   const getCarpetas = (maquina) => {
     if (maquina === maquinas.APX.code) {
       return ['datent', 'datsal']
@@ -51,7 +51,7 @@ export default function MaquinasButtonGroup ({ origenDestino, maquina, setMaquin
       {
       maquina === maquinas.PASARELA.code || maquina === maquinas.APX.code
         ? <>
-          <CarpetasButtonGroup origenDestino={origenDestino} carpetas={carpetas} carpeta={carpeta} setCarpeta={setCarpeta}/>
+          <CarpetasButtonGroup origenDestino={origenDestino} carpetas={carpetas} carpeta={carpeta} setCarpeta={setCarpeta} setCierreHisto={setCierreHisto}/>
         </>
         : ''
       }
