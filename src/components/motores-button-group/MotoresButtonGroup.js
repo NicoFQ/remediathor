@@ -5,7 +5,7 @@ export default function MotoresButtonGroup ({ origenDestino, motor, setMotor }) 
   const arrayMotores = Object.keys(motores)
   return (
     <>
-      <ButtonGroup>
+      <ButtonGroup className='mt-2 mb-2'>
         {
           arrayMotores.map(motorArr => (
             <Button

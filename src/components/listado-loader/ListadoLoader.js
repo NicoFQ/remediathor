@@ -1,10 +1,25 @@
+import { useState } from 'react'
 import ruta from '../../constants/rutas'
 
 export default function ListadoLoader ({ id, name, setListado, listados }) {
-  const listadoCargado = async (e) => {
+  const [fechaListadoCargado, setFechaListadoCargado] = useState('-')
+  const onChangeFile = async (e) => {
     const [file] = e.target.files
+    updateListado(e.target.dataset.listado, file)
+  }
+
+  const handleDrop = async (e) => {
+    e.preventDefault()
+    const [file] = e.dataTransfer.files
+
+    updateListado(e.target.dataset.listado, file)
+  }
+
+  const updateListado = async (idListado, file) => {
     if (file) {
-      mapearListado(e.target.id, await file.text())
+      mapearListado(idListado, await file.text())
+      const fecha = new Date()
+      setFechaListadoCargado(fecha.toLocaleDateString('es-ES', { month: 'short', day: '2-digit' }) + ' ' + fecha.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }))
     }
   }
 
@@ -36,7 +51,7 @@ export default function ListadoLoader ({ id, name, setListado, listados }) {
         ficherosActualArr = []
         rutaActual = ''
       } else {
-        ficherosActualArr.push(formatearLineaFichero(linea))
+        ficherosActualArr.push(formatearObjetoFichero(linea))
       }
     })
     mapListados.set(id, mapList)
@@ -49,22 +64,42 @@ export default function ListadoLoader ({ id, name, setListado, listados }) {
     // console.log(mapList.get(rutaFiltrada))
   }
 
-  const formatearLineaFichero = (lineaFichero) => {
+  // const formatearLineaFichero = (lineaFichero) => {
+  //   const lineaSplit = lineaFichero.split(/[ ]{1,}/g)
+  //   // if (lineaSplit.length !== 9) {
+  //   if (lineaSplit.length < 3) {
+  //     return lineaFichero
+  //   }
+  //   //   throw new DOMException('Linea fichero con tamaño distinto de 9: ' + lineaSplit.length)
+  //   // }
+  //   return lineaSplit[lineaSplit.length - 1].padEnd(75, '·') + ' ' + lineaSplit[lineaSplit.length - 3].padStart(2, '0') + ' ' + lineaSplit[lineaSplit.length - 4] + ' ' + lineaSplit[lineaSplit.length - 2] + ' ' + lineaSplit[lineaSplit.length - 5]
+  //   // return lineaSplit.slice(4).join(' ')
+  // }
+
+  const formatearObjetoFichero = (lineaFichero) => {
     const lineaSplit = lineaFichero.split(/[ ]{1,}/g)
-    // if (lineaSplit.length !== 9) {
     if (lineaSplit.length < 3) {
-      return lineaFichero
+      return { name: lineaSplit[lineaSplit.length - 2], date: '', size: lineaSplit[lineaSplit.length - 1] }
     }
-    //   throw new DOMException('Linea fichero con tamaño distinto de 9: ' + lineaSplit.length)
-    // }
-    return lineaSplit[lineaSplit.length - 1].padEnd(80, '·') + ' ' + lineaSplit[lineaSplit.length - 3].padStart(2, '0') + ' ' + lineaSplit[lineaSplit.length - 4] + ' ' + lineaSplit[lineaSplit.length - 2] + ' ' + lineaSplit[lineaSplit.length - 5]
-    // return lineaSplit.slice(4).join(' ')
+    // return lineaSplit[lineaSplit.length - 1].padEnd(75, '·') + ' ' + lineaSplit[lineaSplit.length - 3].padStart(2, '0') + ' ' + lineaSplit[lineaSplit.length - 4] + ' ' + lineaSplit[lineaSplit.length - 2] + ' ' + lineaSplit[lineaSplit.length - 5]
+    return {
+      name: lineaSplit[lineaSplit.length - 1],
+      date: lineaSplit[lineaSplit.length - 3].padStart(2, '0') + ' ' + lineaSplit[lineaSplit.length - 4] + ' ' + lineaSplit[lineaSplit.length - 2],
+      size: lineaSplit[lineaSplit.length - 5]
+    }
   }
 
   return (
-    <div>
-      <label htmlFor={id} className="form-label">{ name }</label>
-      <input className="form-control form-control-sm " id={id} name={id} type="file" onChange={listadoCargado}/>
+    <div
+      data-listado={id}
+      onDrop={handleDrop}
+      onDragOver={(event) => event.preventDefault()}
+      className='text-center pt-1 pb-1'
+      style={{ width: '100%', border: '1px solid silver' }}
+    >
+      <label htmlFor={id} className="form-label mb-0" style={{ verticalAlign: 'middle', fontSize: '0.8rem' }}>{ name }</label>
+      <pre className='mb-0'>{'{ ' + fechaListadoCargado + ' }'}</pre>
+      <input className="form-control form-control-sm d-none" id={id} name={id} data-listado={id} type="file" onChange={onChangeFile} accept='.txt'/>
     </div>
   )
 }

@@ -10,9 +10,8 @@ export default function PasoFichero ({ onSavePaso, listDatsalDatent }) {
 
   return (
     <div>
-      <p>- PASO FICHERO -</p>
-      <div className='d-flex flex-row justify-content-between'>
-        <ButtonGroup>
+      <div className='d-flex flex-row justify-content-around flex-wrap'>
+        <ButtonGroup className='mt-2 mb-2'>
           <Button
             color="secondary"
             size="sm"

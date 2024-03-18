@@ -2,14 +2,26 @@ import { Button, FormGroup, Input, Label } from 'reactstrap'
 import tipoAccion from '../../../constants/acciones'
 
 import OrigenDestino from '../origen/OrigenDestino'
+import { useState } from 'react'
 
 export default function AccionCopiar ({ pais, listDatsalDatent }) {
+  const [textareaOrigenValue, setTextareaOrigenValue] = useState('')
+  const [textareaDestinoValue, setTextareaDestinoValue] = useState('')
+
+  const onRenombrarEnDestino = (e) => {
+    if (e.target.checked) {
+      setTextareaDestinoValue(textareaOrigenValue)
+    } else {
+      setTextareaDestinoValue('')
+    }
+  }
+
   return (
-    <div className='border'>
-      <p>Accion copiar</p>
+    <div>
       <input type="hidden" name="accion" value={tipoAccion.COPIAR.code} />
+      <div className='d-flex flex-row justify-content-between flex-wrap'>
       <FormGroup check>
-        <Input id='renombrarDestino' name='renombrarDestino' type="checkbox" />
+        <Input id='renombrarDestino' name='renombrarDestino' type="checkbox" onChange={onRenombrarEnDestino}/>
         <Label check for='renombrarDestino' >
           Renombrar en destino
         </Label>
@@ -26,15 +38,15 @@ export default function AccionCopiar ({ pais, listDatsalDatent }) {
           Descomprimir en destino
         </Label>
       </FormGroup>
-      <OrigenDestino pais={pais} origenDestino={'Origen'} listDatsalDatent={listDatsalDatent}/>
-      <br />
-      <br />
-      <OrigenDestino pais={pais} origenDestino={'Destino'} listDatsalDatent={listDatsalDatent}/>
-      <hr />
+      </div>
+
+      <OrigenDestino pais={pais} origenDestino={'Origen'} listDatsalDatent={listDatsalDatent} textareaValue={textareaOrigenValue} setTextareaValue={setTextareaOrigenValue} />
+
+      <OrigenDestino pais={pais} origenDestino={'Destino'} listDatsalDatent={listDatsalDatent} textareaValue={textareaDestinoValue} setTextareaValue={setTextareaDestinoValue} />
 
       <div className="d-grid gap-2 col-6 mx-auto">
         <Button type='submit' color="warning" size="sm" outline>
-          Guardar
+          {'{ 💾 Guardar }'}
         </Button>
       </div>
     </div>

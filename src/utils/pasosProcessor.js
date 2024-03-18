@@ -21,6 +21,12 @@ const pasoProcessor = {
       }
       return pasoReader.copiar(paso.pais, origen, destino)
     }
+  },
+  merge: (pasosMap) => {
+    return Array.from(pasosMap.keys()).reduce((acc, pasoKey, i) => {
+      acc += `(${i + 1}). ` + pasoProcessor.process(pasosMap.get(pasoKey))
+      return acc
+    }, '')
   }
 }
 

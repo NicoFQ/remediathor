@@ -5,7 +5,7 @@ export default function PaisesButtonGroup ({ pais, setPais }) {
   const arrayPaises = Object.keys(paises)
   return (
     <>
-      <ButtonGroup>
+      <ButtonGroup className='mt-2 mb-2'>
         {
           arrayPaises.map(paisArr => (
             <Button
