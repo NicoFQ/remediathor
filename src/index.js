@@ -7,7 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 window.addEventListener('keydown', (e) => {
-  console.log(e)
+  if (e.ctrlKey && e.shiftKey) {
+    console.log(e)
+  }
 })
 root.render(
   <React.StrictMode>

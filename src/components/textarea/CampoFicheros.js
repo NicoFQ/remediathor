@@ -30,9 +30,7 @@ export default function CampoFicheros ({ id, label, origenDestino, pais, maquina
         : 'DATENT_DATSAL'
 
   const listadoDisponible = () => {
-    const disponible = maquina === maquinas.PASARELA.code && listado && listado.has(idListado)
-    // setMostrarListado(disponible)
-    return disponible
+    return maquina === maquinas.PASARELA.code && listado && listado.has(idListado)
   }
 
   const obtenerListado = () => {
@@ -60,7 +58,6 @@ export default function CampoFicheros ({ id, label, origenDestino, pais, maquina
           </FormGroup>)
         }
       </div>
-      <br />
       <FormGroup floating>
         <Input id={id} name={id} type="textarea" value={textareaValue} onChange={e => setTextareaValue(e.target.value)} style={{ height: '200px' }}/>
         <Label for={id}>
@@ -70,7 +67,7 @@ export default function CampoFicheros ({ id, label, origenDestino, pais, maquina
         <div>
           {
             mostrarListado && listadoDisponible() &&
-            (<select id={'listado' + id} name={'listado' + id} multiple onChange={onChangeListado} style={{ height: '250px', width: '100%', scrollbarWidth: 'thin', overflow: 'scroll', whiteSpace: 'pre-wrap' }}>
+            (<select id={'listado' + id} name={'listado' + id} multiple onChange={onChangeListado} style={{ height: '250px', width: '100%', scrollbarWidth: 'thin', overflow: 'scroll', whiteSpace: 'pre-wrap', resize: 'vertical' }}>
               {
                 // listado.has((motor === motores.IFRS9.code && carpeta === 'histo') ? 'HISTO_IFRS9' : (motor !== motores.IFRS9.code && carpeta === 'histo') ? 'HISTO' : 'DATENT_DATSAL')
                 obtenerListado()

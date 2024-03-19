@@ -6,7 +6,6 @@ export default function CarpetasButtonGroup ({ origenDestino, carpetas, carpeta,
 
   const onChangeFechaCierre = (e) => {
     if (e.target.value.length >= 4) {
-      console.log('cierre: ' + e.target.value)
       setCierreHisto(e.target.value)
       setHistoDesctivado(false)
       setCarpeta('histo')

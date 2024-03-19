@@ -56,6 +56,6 @@ option::before{content: attr(data-before);
 }
 
 option::after{content: attr(data-after);
-  /* color: silver; */
+  font-size: .8rem;
   display:block;
 }

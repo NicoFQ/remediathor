@@ -21,6 +21,11 @@ const pais = {
     code: 'UY',
     path: '/urug'
   },
+  PT: {
+    name: 'Portugal',
+    code: 'PT',
+    path: '/port'
+  },
   ES: {
     name: 'España',
     code: 'ES',

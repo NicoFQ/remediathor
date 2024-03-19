@@ -53,12 +53,11 @@ export default function Left ({ onSavePaso, pasos, setPasos, listDatsalDatent })
       </Accordion>
 
       <div className='d-flex flex-row justify-content-around flex-wrap mt-2 mb-2'>
-        <Button color="secondary" size="sm" onClick={() => onClickNuevoPaso('FICHERO')} >
+        <Button color="secondary" size="sm" onClick={() => onClickNuevoPaso('FICHERO')} style={{ width: '40%' }} >
           {'{ ➕ Paso Fichero }'}
         </Button>
-        <Button color="secondary" size="sm" onClick={() => onClickNuevoPaso('AJF')} >
-        {'{ ➕ Paso AJF }'}
-
+        <Button color="secondary" size="sm" onClick={() => onClickNuevoPaso('AJF')} style={{ width: '40%' }} >
+          {'{ ➕ Paso AJF }'}
         </Button>
       </div>
     </div>

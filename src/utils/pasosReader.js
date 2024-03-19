@@ -15,8 +15,19 @@ ${destino.ficheros}
 `
     )
   },
-  renombrar: ({ pais, motor, maquina, ruta, ficheros, nuevosNombre }) => {
+  renombrar: (pais, origen, destino) => {
+    return (
+`${tipoAccion.RENOMBRAR.title}
+# MAQUINA: ${maquina[origen.maquina].name}
+${rutaProcessor.process(pais, origen.maquina, origen.motor, origen.carpeta)}
 
+- Ficheros:
+${origen.ficheros}
+
++ Nuevos nombres:
+${destino.ficheros}
+`
+    )
   },
   borrar: ({ pais, motor, maquina, ruta, ficheros }) => {
 

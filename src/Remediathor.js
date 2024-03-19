@@ -39,10 +39,6 @@ export default function Remediathor () {
     setTextAreaValue(pasoProcessor.merge(pasos))
   }
 
-  const onKeyDownAtajos = (e) => {
-    console.log(e)
-  }
-
   return (
     <>
       <nav className='container d-flex flex-row justify-content-around align-items-center'>
@@ -58,7 +54,7 @@ export default function Remediathor () {
               className={activeTab === '1' ? 'active' : ''}
               onClick={() => setActiveTab('1')}
             >
-              Tab1
+              PET-1
             </NavLink>
           </NavItem>
           <NavItem>
@@ -85,7 +81,7 @@ export default function Remediathor () {
           </TabPane>
         </TabContent>
       </div>
-      <div className='container mt-2' onKeyUp={onKeyDownAtajos} tabIndex={0}>
+      <div className='container mt-2'>
         <div className='row'>
           <Left onSavePaso={onSavePaso} pasos={pasos} setPasos={setPasos} listDatsalDatent={listDatsalDatent} />
           <Right pasos={pasos} textAreaValue={textAreaValue} setTextAreaValue={setTextAreaValue}/>
