@@ -26,6 +26,11 @@ const ruta = {
       datent: '/datent',
       datsal: '/datsal',
       histo: '/histo'
+    },
+    IFRS9SIM: {
+      datent: '/datent',
+      datsal: '/datsal',
+      histo: '/histo'
     }
   },
   SAS: {

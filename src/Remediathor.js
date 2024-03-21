@@ -42,7 +42,7 @@ export default function Remediathor () {
   return (
     <>
       <nav className='container d-flex flex-row justify-content-around align-items-center'>
-        <h1><b>{'{R}'}</b></h1>
+        <h1>{'{R}'}</h1>
         <ListadoLoader id='DATENT_DATSAL' name={'Daent/Datsal'} setListado={setListDatsalDatent} listados={listDatsalDatent} />
         <ListadoLoader id='HISTO' name={'Histo'} setListado={setListDatsalDatent} listados={listDatsalDatent} />
         <ListadoLoader id='HISTO_IFRS9' name={'Histo IFRS9'} setListado={setListDatsalDatent} listados={listDatsalDatent} />

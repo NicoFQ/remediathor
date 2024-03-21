@@ -49,6 +49,15 @@ const motor = {
       datsal: '/datsal',
       histo: '/histo'
     }
+  },
+  IFRS9SIM: {
+    name: 'Simulador parametria',
+    code: 'IFRS9SIM',
+    path: {
+      datent: '/datent',
+      datsal: '/datsal',
+      histo: '/histo'
+    }
   }
 
 }

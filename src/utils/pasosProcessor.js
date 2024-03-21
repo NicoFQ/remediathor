@@ -36,11 +36,20 @@ const pasoProcessor = {
         todo: paso.todoDestino
       }
       return pasoReader.renombrar(paso.pais, origen, destino)
+    } else if (paso.accion === tipoAccion.BORRAR.code) {
+      const origen = {
+        maquina: paso.maquinaOrigen,
+        motor: paso.motorOrigen,
+        carpeta: paso.carpetaOrigen,
+        ficheros: paso.ficherosOrigen,
+        todo: paso.todoOrigen
+      }
+      return pasoReader.borrar(paso.pais, origen)
     }
   },
   merge: (pasosMap) => {
     return Array.from(pasosMap.keys()).reduce((acc, pasoKey, i) => {
-      acc += `(${i + 1}). ` + pasoProcessor.process(pasosMap.get(pasoKey)) + '\n\n'
+      acc += `(${i + 1})🟩` + pasoProcessor.process(pasosMap.get(pasoKey)) + '\n\n'
       return acc
     }, '')
   }

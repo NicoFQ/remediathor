@@ -95,10 +95,10 @@ export default function ListadoLoader ({ id, name, setListado, listados }) {
       onDrop={handleDrop}
       onDragOver={(event) => event.preventDefault()}
       className='text-center pt-1 pb-1'
-      style={{ width: '100%', border: '1px solid silver' }}
+      style={{ width: '100%' }}
     >
-      <label htmlFor={id} className="form-label mb-0" style={{ verticalAlign: 'middle', fontSize: '0.8rem' }}>{ name }</label>
-      <pre className='mb-0'>{'{ ' + fechaListadoCargado + ' }'}</pre>
+      <label htmlFor={id} data-listado={id} className="form-label mb-0" style={{ verticalAlign: 'middle', fontSize: '0.8rem', textDecoration: 'underline' }}>{ name }</label>
+      <pre className='mb-0' data-listado={id}>{'{ ' + fechaListadoCargado + ' }'}</pre>
       <input className="form-control form-control-sm d-none" id={id} name={id} data-listado={id} type="file" onChange={onChangeFile} accept='.txt'/>
     </div>
   )

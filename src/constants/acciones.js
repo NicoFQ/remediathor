@@ -17,6 +17,16 @@ const tipoAccion = {
     code: 'BORRAR',
     name: 'Borrar',
     title: 'Borrar los siguientes ficheros:'
+  },
+  GZIP: {
+    code: 'GZIP',
+    name: 'Gzip',
+    title: 'Comprimir los siguientes ficheros:'
+  },
+  UNGZIP: {
+    code: 'UNGZIP',
+    name: 'Ungzip',
+    title: 'Desomprimir los siguientes ficheros:'
   }
 }
 

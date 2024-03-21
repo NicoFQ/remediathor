@@ -39,7 +39,9 @@ export default function Left ({ onSavePaso, pasos, setPasos, listDatsalDatent })
         {
           Array.from(pasos.keys()).map((pasoKey, i) =>
             (<AccordionItem key={pasoKey}>
-              <AccordionHeader targetId={pasoKey}><span id={pasoKey} className='me-3' onClick={onClickEliminarPaso} title='Eliminar' role='button'>❌</span>Paso {i + 1} {pasos.get(pasoKey).tipo}</AccordionHeader>
+              <AccordionHeader targetId={pasoKey} >
+                <span id={pasoKey} className='me-3' onClick={onClickEliminarPaso} title='Eliminar' role='button' style={{ fontSize: '.9rem' }}>❌</span>Paso {i + 1} {pasos.get(pasoKey).tipo}
+              </AccordionHeader>
               <AccordionBody accordionId={pasoKey}>
                 <form id={pasoKey} method='post' onSubmit={onSavePaso}>
                   { pasos.get(pasoKey).tipo === 'FICHERO' && <PasoFichero onSavePaso={onSavePaso} listDatsalDatent={listDatsalDatent}/> }
