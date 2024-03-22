@@ -2,6 +2,7 @@ import tipoAccion from './../constants/acciones'
 import maquina from './../constants/maquinas'
 import rutaProcessor from './rutasProcessor'
 const pasoReader = {
+
   copiar: (pais, origen, destino) => {
     return (
 `${tipoAccion.COPIAR.title}${(destino.renombrar === 'on') ? ' y renombrar en destino' : ''}:
@@ -11,14 +12,14 @@ ${rutaProcessor.process(pais, origen.maquina, origen.motor, origen.carpeta)}${(o
 
 ${origen.ficheros}
 
-
--- DESTINO: ${maquina[destino.maquina].name} --${(destino.renombrar === 'on') ? ' (Importante renombrar)' : ''}${(destino.todo === 'on') ? '\n- Todos a esta carpeta' : ''}
+-- DESTINO: ${maquina[destino.maquina].name} --${(destino.renombrar === 'true') ? ' ⚠️Importante renombrar⚠️' : ''}${(destino.todo === 'on') ? '\n- Todos a esta carpeta' : ''}
 ${rutaProcessor.process(pais, destino.maquina, destino.motor, destino.carpeta)}
 
 ${destino.ficheros}
 `
     )
   },
+
   renombrar: (pais, origen, destino) => {
     return (
 `${tipoAccion.RENOMBRAR.title}
@@ -34,6 +35,7 @@ ${destino.ficheros}
 `
     )
   },
+
   borrar: (pais, origen) => {
     return (
 `${tipoAccion.BORRAR.title}
