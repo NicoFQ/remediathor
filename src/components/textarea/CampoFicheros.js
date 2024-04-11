@@ -39,7 +39,11 @@ export default function CampoFicheros ({ id, label, origenDestino, pais, maquina
       return ['NOT_FOUND']
     }
     if (idListado !== 'DATENT_DATSAL') {
-      const ficherosDeCarpeta = mapListado.get(rutaProcessor.process(pais, maquina, motor, carpeta)).filter(linea => linea.name.includes(cierreHisto))
+      const regexp = new RegExp(cierreHisto)
+      const ficherosDeCarpeta = mapListado
+        .get(rutaProcessor.process(pais, maquina, motor, carpeta))
+        .filter(linea => regexp.test(linea.name))
+
       if (ficherosDeCarpeta.length === 0) return ['Sin datos para la búsqueda: [*' + cierreHisto + '*]']
       return ficherosDeCarpeta
     }

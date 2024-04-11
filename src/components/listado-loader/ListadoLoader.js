@@ -58,23 +58,7 @@ export default function ListadoLoader ({ id, name, setListado, listados }) {
     setListado(mapListados)
 
     console.log(mapListados)
-
-    // const rutaFiltrada = rutaProcessor.process(formJson.maquinaOrigen, formJson.motorOrigen, formJson.pais, formJson.carpetaOrigen)
-    // console.log(rutaFiltrada)
-    // console.log(mapList.get(rutaFiltrada))
   }
-
-  // const formatearLineaFichero = (lineaFichero) => {
-  //   const lineaSplit = lineaFichero.split(/[ ]{1,}/g)
-  //   // if (lineaSplit.length !== 9) {
-  //   if (lineaSplit.length < 3) {
-  //     return lineaFichero
-  //   }
-  //   //   throw new DOMException('Linea fichero con tamaño distinto de 9: ' + lineaSplit.length)
-  //   // }
-  //   return lineaSplit[lineaSplit.length - 1].padEnd(75, '·') + ' ' + lineaSplit[lineaSplit.length - 3].padStart(2, '0') + ' ' + lineaSplit[lineaSplit.length - 4] + ' ' + lineaSplit[lineaSplit.length - 2] + ' ' + lineaSplit[lineaSplit.length - 5]
-  //   // return lineaSplit.slice(4).join(' ')
-  // }
 
   const formatearObjetoFichero = (lineaFichero) => {
     const lineaSplit = lineaFichero.split(/[ ]{1,}/g)

@@ -7,7 +7,7 @@ export default function OrigenDestino ({ pais, origenDestino, listDatsalDatent, 
   const [maquina, setMaquina] = useState('PASARELA')
   const [motor, setMotor] = useState('CECO')
   const [carpeta, setCarpeta] = useState('datent')
-  const [cierreHisto, setCierreHisto] = useState('datent')
+  const [cierreHisto, setCierreHisto] = useState('')
 
   return (
     <div>

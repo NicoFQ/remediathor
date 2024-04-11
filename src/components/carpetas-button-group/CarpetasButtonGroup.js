@@ -6,7 +6,9 @@ export default function CarpetasButtonGroup ({ origenDestino, carpetas, carpeta,
 
   const onChangeFechaCierre = (e) => {
     if (e.target.value.length >= 4) {
-      setCierreHisto(e.target.value)
+      const txtPattern = e.target.value.replace('*', '.*').replace('?', '.?')
+      // txtPattern = txtPattern.replace('?', '.?')
+      setCierreHisto(txtPattern)
       setHistoDesctivado(false)
       setCarpeta('histo')
     } else {
