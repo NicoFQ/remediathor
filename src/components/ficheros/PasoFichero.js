@@ -5,6 +5,7 @@ import { Button, ButtonGroup } from 'reactstrap'
 import PaisesButtonGroup from '../paisesButtonGroup/PaisesButtonGroup'
 import AccionRenombrar from './renombrar/AccionRenombrar'
 import AccionBorrar from './borrar/AccionBorrar'
+import FlagImg from '../svg-image/FlagImg'
 
 export default function PasoFichero ({ onSavePaso, listDatsalDatent }) {
   const [textareaOrigenValue, setTextareaOrigenValue] = useState('')
@@ -76,6 +77,9 @@ export default function PasoFichero ({ onSavePaso, listDatsalDatent }) {
             ))
           }
         </ButtonGroup>
+        <div>
+          <FlagImg pais={pais}/>
+        </div>
         <PaisesButtonGroup pais={pais} setPais={setPais} />
       </div>
       <hr />

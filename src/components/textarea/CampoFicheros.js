@@ -5,6 +5,7 @@ import maquinas from '../../constants/maquinas'
 import { useState } from 'react'
 import motores from '../../constants/motores'
 import Checkbox from '../Checkbox'
+import FlagImg from '../svg-image/FlagImg'
 // import ruta from '../../constants/rutas'
 
 export default function CampoFicheros ({ id, label, origenDestino, pais, maquina, motor, carpeta, listado, cierreHisto, textareaValue, setTextareaValue }) {
@@ -65,7 +66,7 @@ export default function CampoFicheros ({ id, label, origenDestino, pais, maquina
       <FormGroup floating>
         <Input id={id} name={id} type="textarea" value={textareaValue} onChange={e => setTextareaValue(e.target.value)} style={{ height: '200px' }}/>
         <Label for={id}>
-          {label + rutaProcessor.process(pais, maquina, motor, carpeta)}
+          {label + rutaProcessor.process(pais, maquina, motor, carpeta)} <FlagImg pais={pais} height={25} />
         </Label>
 
         <div>

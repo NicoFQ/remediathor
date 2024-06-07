@@ -8,6 +8,7 @@ import {
   AccordionItem,
   Button
 } from 'reactstrap'
+import FlagImg from './svg-image/FlagImg'
 export default function Left ({ onSavePaso, pasos, setPasos, listDatsalDatent }) {
   // const [tipoPaso, setTipoPaso] = useState('')
   const [open, setOpen] = useState('1')
@@ -40,7 +41,7 @@ export default function Left ({ onSavePaso, pasos, setPasos, listDatsalDatent })
           Array.from(pasos.keys()).map((pasoKey, i) =>
             (<AccordionItem key={pasoKey}>
               <AccordionHeader targetId={pasoKey} >
-                <span id={pasoKey} className='me-3' onClick={onClickEliminarPaso} title='Eliminar' role='button' style={{ fontSize: '.9rem' }}>❌</span>Paso {i + 1} {pasos.get(pasoKey).tipo}
+                <span id={pasoKey} className='me-3' onClick={onClickEliminarPaso} title='Eliminar' role='button' style={{ fontSize: '.9rem' }}>❌</span>Paso {i + 1} {pasos.get(pasoKey).tipo} <span className='ps-4'><FlagImg pais={pasos.get(pasoKey).pais} height={30} /></span>
               </AccordionHeader>
               <AccordionBody accordionId={pasoKey}>
                 <form id={pasoKey} method='post' onSubmit={onSavePaso}>
