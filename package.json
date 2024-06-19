@@ -2,6 +2,7 @@
   "name": "remediathor",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "@formkit/drag-and-drop": "^0.0.24",
     "@testing-library/jest-dom": "^5.17.0",
