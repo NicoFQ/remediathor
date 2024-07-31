@@ -15,6 +15,10 @@ const maquina = {
   TRANSMI: {
     code: 'TRANSMI',
     name: 'TRANSMI'
+  },
+  DATIO: {
+    code: 'DATIO',
+    name: 'filex.live-01.es-omega.igrupobbva'
   }
 
 }

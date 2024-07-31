@@ -38,6 +38,9 @@ const ruta = {
   },
   TRANSMI: {
     base: '\\\\Datdpto1\\datos_datdpto1\\TRANSMI\\SC004150\\_enviar\\datsal\\pd\\'
+  },
+  DATIO: {
+    base: '/gl/in/staging/apxr2/ohwa/'
   }
 
 }
